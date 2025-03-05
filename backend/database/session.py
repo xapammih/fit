@@ -1,7 +1,7 @@
 from database import SessionFactory
 
 
-def get_sync_session():
+def get_session():
     session = SessionFactory()
 
     try:
