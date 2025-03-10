@@ -1,9 +1,13 @@
 from sqlalchemy.orm import Session
 
+from repositories.users import UsersRepository
+
 
 class UnitOfWork:
     def __init__(self, session: Session):
         self._session = session
+
+        self.users = UsersRepository(session)
 
     def commit(self):
         self._session.commit()
